@@ -1,0 +1,48 @@
+@mixin btnType($color: #fff, $bgColor: #0083dc) {
+  color: $color;
+    background-color: $bgColor;
+    &:hover {
+      color: $color;
+      background-color: shadow($bgColor, 10%);
+      box-shadow: 0 0 1rem $color;
+      transition: all .3s ease-in-out;
+    }
+}
+
+.my-btn {
+  font-size: .6rem;
+  cursor: pointer;
+  color: #3c3c3c;
+  background-color: #fff;
+  padding: .48rem .75rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 .5rem #d3d3d3;
+  border-radius: .2rem;
+
+  &:focus, &:visited {
+    box-shadow: 0 0 1rem #b2b2b2;
+    transition: all .3s ease-in-out;
+  }
+
+  &.btn-size-large {
+    font-size: .92rem;
+    padding: .5rem 1rem;
+  }
+  &.btn-size-small {
+    font-size: .48rem;
+    padding: .36rem .5rem;
+  }
+
+  &.btn-type-success {
+    @include btnType(#fff, #00bc98);
+  }
+  &.btn-type-danger {
+    @include btnType(#fff, #dc3232);
+  }
+  &.btn-type-warning {
+    @include btnType(#fff, #d34422);
+  }
+  &.btn-type-primary {
+    @include btnType(#fff, #0083dc);
+  }
+}

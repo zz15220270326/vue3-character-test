@@ -1,0 +1,3 @@
+export {
+  getquestionData,
+} from './indexModel';

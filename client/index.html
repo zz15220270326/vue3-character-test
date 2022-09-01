@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://at.alicdn.com/t/c/font_3168101_eok8llnv2q.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div id="J_ExamData" style="display: none;">
+      [{"question":"在大多数情况下，你会选择","optionA":"顺其自然","optionB":"按程序做事","optionAValue":"MxLL","optionBValue":"C1Dd"},{"question":"下面每一对词语中，哪个词语更合你心意","optionA":"不受约束","optionB":"预先安排","optionAValue":"xtyf","optionBValue":"PYR6"},{"question":"当你要在一个星期内完成一个大项目，你在开始时候会","optionA":"把要做的工作依次列出","optionB":"马上动工","optionAValue":"4L5T","optionBValue":"624K"},{"question":"你会跟哪些人做朋友","optionA":"常提出新主意的","optionB":"脚踏实地的","optionAValue":"a18P","optionBValue":"CCBj"},{"question":"下面每一对词语中，哪个词语更合你心意","optionA":"意念","optionB":"实况","optionAValue":"9p8p","optionBValue":"nHou"},{"question":"你会 ","optionA":"跟随一些证明有效的方法","optionB":"分析还有什么毛病，及针对尚未解决的难题 ","optionAValue":"TqSH","optionBValue":"CUBI"},{"question":"与很多人一起会","optionA":"令你活力倍增","optionB":"常常令你心力交瘁","optionAValue":"s8rb","optionBValue":"nWmN"},{"question":"下面每一对词语中，哪个词语更合你心意","optionA":"热衷","optionB":"文静","optionAValue":"vXwU","optionBValue":"F2E9"},{"question":"你刚认识的朋友能否说出你的兴趣","optionA":"马上可以","optionB":"要他们真正了解后才可以","optionAValue":"LrKk","optionBValue":"9w8n"},{"question":"下面每一对词语中，哪个词语更合你心意","optionA":"令人信服","optionB":"感人的","optionAValue":"pDql","optionBValue":"QbRf"},{"question":"要作决定时，你认为比较重要的是","optionA":"据事实衡量","optionB":"考虑他人的感受和意见 ","optionAValue":"nkoy","optionBValue":"8Z9Z"},{"question":"哪一个答案最贴切描绘你一般的感受或行为","optionA":"公正的","optionB":" 有关怀心","optionAValue":"p0qe","optionBValue":"eIfQ"}]
+    </div>
+
+    <div id="J_ExamSimpleData" style="display: none;">
+      <%= testExample %>
+    </div>
+
+    <div id="app"></div>
+
+    <% for (let script of jsCdn) { %>
+      <script type="text/javascript" src="<%= script %>"></script>
+    <% } %>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
