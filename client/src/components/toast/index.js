@@ -37,8 +37,10 @@ function showToast(options = {}) {
       }
       typeof onClosed === 'function' && onClosed();
     });
-    clearTimeout(timer);
-    timer = null;
+    if (timer) {
+      clearTimeout(timer);
+      timer = null;
+    }
   };
 
   timer = setTimeout(() => {

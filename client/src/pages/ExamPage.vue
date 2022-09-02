@@ -1,22 +1,24 @@
 <template>
-  <div class="page-container">
-    <my-header>
-      <template #default>
-        <h2>{{ mainTitle }}</h2>
-      </template>
-    </my-header>
-    <main class="container">
-      <question-list :list="questionData" />
+  <div ref="pageEl" class="page-container">
+    <main class="scroll-content">
+      <my-header>
+        <template #default>
+          <h2>{{ mainTitle }}</h2>
+        </template>
+      </my-header>
+      <main class="container">
+        <question-list :list="questionData" />
+      </main>
+      <footer class="submitter">
+        <my-button
+          type="success"
+          size="large"
+          @click="onSubmitData"
+        >
+          提交结果
+        </my-button>
+      </footer>
     </main>
-    <footer class="submitter">
-      <my-button
-        type="success"
-        size="large"
-        @click="onSubmitData"
-      >
-        提交结果
-      </my-button>
-    </footer>
   </div>
 </template>
 
@@ -27,12 +29,12 @@ import Toast from '@/components/toast';
 import {
   reactive,
   toRefs,
-  onMounted
+  ref,
 } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
+import { useQuestionData, useBscroll } from '@/hooks';
 import {
-  SET_ANSWER_DATA,
   SUBMIT_ANSWER_DATA
 } from '@/store/answer/types';
 
@@ -40,18 +42,24 @@ const store = useStore();
 const router = useRouter();
 
 const state = reactive({
-  mainTitle: '测评中。。。'
+  mainTitle: '测评中。。。',
 });
 const {
   mainTitle
 } = toRefs(state);
 const {
-  questionData
-} = toRefs(store.state.question);
-const {
   answerData,
   characterInfo,
 } = toRefs(store.state.answer);
+
+const { questionData } = useQuestionData({ pageName: 'ExamPage' });
+useBscroll({
+  mouseWheel: true,
+  click: true,
+  tap: true,
+  scrollY: true,
+  bounceTime: 300,
+});
 
 const onSubmitData = async () => {
   const submitData = [...answerData.value];
@@ -70,25 +78,16 @@ const onSubmitData = async () => {
   }
 }
 
-onMounted(() => {
-  if (!questionData.value.length) {
-    Toast({
-      message: '暂无考试内容, 请重新开始',
-      duration: 2000,
-      onClosed: () => {
-        router.push('/');
-      }
-    });
-    return;
-  }
-  store.dispatch(`answer/${ SET_ANSWER_DATA }`, questionData.value);
-});
-
 </script>
 
 <style lang="scss" scoped>
 .page-container {
   width: 100%;
+  height: 100vh;
+
+  .scroll-content { // don't set height
+    // height: 100%;
+  }
 
   .submitter {
     position: fixed;

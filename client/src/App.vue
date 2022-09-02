@@ -1,10 +1,18 @@
 <script setup>
-  /** test-fields */
+import { useRoute } from 'vue-router';
+import { toRef, watch } from 'vue';
+
+const route = useRoute();
+
+const routePath = toRef(route, 'path');
+
+watch(routePath, () => {
+  window.scroll(0, 0);
+});
+
 </script>
 
 <template>
-  <div>
-    <router-view />
-  </div>
+  <router-view />
 </template>
 

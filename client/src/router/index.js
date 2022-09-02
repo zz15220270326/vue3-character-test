@@ -12,12 +12,12 @@ export default createRouter({
     {
       name: 'ExamPage',
       path: '/exam',
-      component: () => import('@/pages/ExamPage')
+      component: () => import('@/pages/ExamPage'),
     },
     {
       name: 'ResultPage',
       path: '/result',
-      component: () => import('@/pages/ResultPage')
+      component: () => import('@/pages/ResultPage'),
     },
     {
       name: 'NotFoundPage',

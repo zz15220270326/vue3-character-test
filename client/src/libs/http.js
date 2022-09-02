@@ -1,13 +1,5 @@
 import axios from 'axios';
-
-const DEFAULT_CONFIG = {
-  baseURL: 'http://localhost:5200',
-  timeout: 5 * 1000,
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    // 'Content-Type': 'application/json',
-  },
-};
+import { BASE_REQUEST_CONFIG } from './configs';
 
 export function axiosGet({
   options = {},
@@ -15,7 +7,7 @@ export function axiosGet({
   fail = () => {}
 }) {
   axios({
-    ...DEFAULT_CONFIG,
+    ...BASE_REQUEST_CONFIG,
     ...options
   })
     .then(res => {
@@ -32,7 +24,7 @@ export function axiosPost({
   fail = () => {}
 }) {
   axios({
-    ...DEFAULT_CONFIG,
+    ...BASE_REQUEST_CONFIG,
     ...options,
     method: 'POST',
   })
@@ -41,5 +33,5 @@ export function axiosPost({
     })
     .catch(err => {
       fail(err);
-    })
+    });
 }

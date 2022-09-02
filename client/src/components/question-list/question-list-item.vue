@@ -11,6 +11,7 @@
       >
         <!-- {{ `answerData${index + 1}: ${ answerData[index] }` }} -->
         <input
+          class="item-radio"
           type="radio"
           :value="opt.value"
           v-model="answerData[index]"
@@ -81,11 +82,16 @@ const onCheckValue = (value) => {
     width: 100%;
     padding: .3rem 0;
     box-sizing: border-box;
-    font-size: .66rem;
+    font-size: .88rem;
 
     .option-item {
       margin-left: .3rem;
       margin-top: .25rem;
+
+      .item-radio {
+        width: .75rem;
+        height: .75rem;
+      }
     }
   }
 }
