@@ -20,7 +20,7 @@ export function getquestionData(params = {}) {
 
 export function submitAnswerData(formData = {}) {
   const data = new URLSearchParams();
-  
+
   for (let k in formData) {
     data.append(k, formData[k]);
   }
