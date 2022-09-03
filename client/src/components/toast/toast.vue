@@ -1,7 +1,7 @@
 <template>
   <teleport :to="teleport">
     <transition name="my-toast-fade">
-      <div class="my-toast" v-show="visible">
+      <div class="my-toast" v-if="visible">
         <div v-show="overlay" class="my-toast-mask"></div>
         <div class="my-toast-inner">
           <header>

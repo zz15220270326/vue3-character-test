@@ -1,5 +1,5 @@
 .my-toast {
-  font-size: .88rem;
+  font-size: .14rem;
 
   .my-toast-mask {
     position: fixed;
@@ -21,15 +21,15 @@
     background-color: rgba(0, 0, 0, .3);
     color: #fff;
     overflow: hidden;
-    padding: .88rem;
+    padding: .14rem;
     box-sizing: border-box;
     white-space: normal;
     word-break: break-all;
-    border-radius: .2rem;
+    border-radius: .05rem;
     transform: translate(-50%, -50%);
 
     .toast-icon {
-      font-size: 1.2rem;
+      font-size: .15rem;
       font-weight: bold;
 
       &.icon-loading {

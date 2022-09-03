@@ -62,34 +62,34 @@ useBscroll({});
 
     .main-nav {
       text-align: center;
-      padding: .36rem 0;
+      padding: .05rem 0;
       border: 1px solid #ddd;
       box-sizing: border-box;
     }
     .inner-box {
       width: 100%;
-      padding: .85rem;
+      padding: .1rem;
       text-align: center;
       border: 1px solid #ddd;
       box-sizing: border-box;
 
       .exam-desc {
         text-align: left;
-        font-size: .8rem;
+        font-size: .13rem;
       }
     }
     .selector-group {
       text-align: center;
-      padding: .6rem;
+      padding: .05rem;
       box-sizing: border-box;
       .select-level-box {
-        padding: .36rem;
+        padding: .1rem;
         box-sizing: border-box;
       }
     }
     .btn-group {
-      padding: .6rem 0;
-      margin-top: .2rem solid #ddd;
+      padding: .05rem 0;
+      margin-top: .05rem solid #ddd;
       box-sizing: border-box;
     }
   }

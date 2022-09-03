@@ -95,11 +95,11 @@ const onSubmitData = async () => {
     left: 0;
     right: 0;
     width: 100%;
-    height: 2.5rem;
+    height: .44rem;
     text-align: center;
     background-color: #fff;
-    padding: .2rem;
-    box-shadow: 0 .12rem .3rem #ddd;
+    padding: .02rem;
+    box-shadow: 0 .03rem .08rem #ddd;
     box-sizing: border-box;
   }
 }

@@ -34,6 +34,6 @@ onMounted(() => {
 .question-list {
   width: 100%;
   overflow-y: auto;
-  margin-bottom: 2.5rem;
+  margin-bottom: .44rem;
 }
 </style>

@@ -5,13 +5,14 @@ let timer = null, // 定时器
     vm = null; // 组件实例
 
 function showToast(options = {}) {
+
   const {
     message = 'Toast',
     type = 'text',
     duration = 2000,
     position = 'middle',
     overlay = false,
-    closeOnClick = false,
+    closeOnClick = true,
     multi = false,
     onClosed
   } = options;
@@ -33,14 +34,17 @@ function showToast(options = {}) {
   vm.clear = () => {
     vm.setVisible(false, () => {
       if (!multi) {
+        if (document.getElementsByClassName('my-toast').length) {
+          [...document.getElementsByClassName('my-toast')].forEach(el => {
+            el.remove();
+          });
+        }
         toast.unmount();
       }
       typeof onClosed === 'function' && onClosed();
     });
-    if (timer) {
-      clearTimeout(timer);
-      timer = null;
-    }
+    clearTimeout(timer);
+    timer = null;
   };
 
   timer = setTimeout(() => {

@@ -1,5 +1,5 @@
 ;(function (doc) {
-  doc.documentElement.fontSize = doc.documentElement.clientWidth / 3.75 + 'px';
+  doc.documentElement.style.fontSize = doc.documentElement.clientWidth / 3.75 + 'px';
 
   if ('addEventListener' in doc) {
     doc.addEventListener('DOMContentLoaded', function () {

@@ -70,27 +70,27 @@ const onCheckValue = (value) => {
 
 <style lang="scss" scoped>
 .q-item {
-  padding: .6rem;
+  padding: .1rem;
   box-sizing: border-box;
-  box-shadow: 0 .03rem .12rem #ddd;
+  box-shadow: 0 .05rem .05rem #ddd;
 
   .q-item-header {
-    font-size: .88rem;
+    font-size: .14rem;
   }
 
   .option-list {
     width: 100%;
-    padding: .3rem 0;
+    padding: .05rem 0;
     box-sizing: border-box;
-    font-size: .88rem;
+    font-size: .14rem;
 
     .option-item {
-      margin-left: .3rem;
-      margin-top: .25rem;
+      margin-left: .05rem;
+      margin-top: .05rem;
 
       .item-radio {
-        width: .75rem;
-        height: .75rem;
+        width: .13rem;
+        height: .13rem;
       }
     }
   }

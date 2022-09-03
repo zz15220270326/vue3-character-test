@@ -27,7 +27,7 @@ export default (bsOptions = {}) => {
         _options,
         bsOptions,
       ));
-      console.log(instance.refs.pageEl, scroll);
+      console.log(scroll);
     });
   });
   onBeforeUnmount(() => {

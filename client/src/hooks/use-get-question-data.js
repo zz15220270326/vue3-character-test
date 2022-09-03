@@ -28,9 +28,14 @@ export default () => {
     selectorList,
     mainTitle,
   } = toRefs(state);
+  const { questionData } = toRefs(store.state.question)
 
   const onTestBtnClick = debounce(async () => {
     await store.dispatch('question/SET_QUESTION_DATA', formData.value);
+    
+    if (!questionData.value?.length) {
+      return;
+    }
     router.push('/exam');
   });
 

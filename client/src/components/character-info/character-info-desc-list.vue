@@ -29,13 +29,13 @@ defineProps({
   box-sizing: border-box;
 
   .list-title {
-    font-size: 1rem;
+    font-size: .16rem;
     font-weight: 500;
   }
 
   .list-item {
-    font-size: .88rem;
-    padding: .5rem;
+    font-size: .14rem;
+    padding: .05rem;
     box-sizing: border-box;
   }
 }

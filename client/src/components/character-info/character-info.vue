@@ -10,7 +10,7 @@
     </header>
     <desc-list
       title="人格概述: "
-      :list="summarize"
+      :list="Array.isArray(summarize) ? summarize : [summarize]"
     />
     <desc-list
       title="性格描述: "
@@ -66,18 +66,17 @@ const props = defineProps({
 
 <style scoped lang="scss">
   .character-info {
-    margin-bottom: 3.8rem;
 
     .c-alphabet {
-      font-size: 1.2rem;
+      font-size: .2rem;
       font-weight: 500;
       // margin: .3rem 0;
     }
 
     .c-name {
-      font-size: 1rem;
+      font-size: .18rem;
       font-weight: 500;
-      padding: .5rem 0;
+      padding: .05rem 0;
       box-sizing: border-box;
     }
   }

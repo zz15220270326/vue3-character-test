@@ -1,24 +1,24 @@
 <template>
-  <div class="page-container">
-    <my-header>
-      <template #default>
-        <h2>{{ mainTitle }}</h2>
-      </template>
-    </my-header>
-    <main>
+  <div ref="pageEl" class="page-container">
+    <div class="scroll-content">
+      <my-header>
+        <template #default>
+          <h2>{{ mainTitle }}</h2>
+        </template>
+      </my-header>
       <infos
         v-if="Object.keys(characterInfo).length"
         v-bind="characterInfo"
       ></infos>
-    </main>
-    <footer class="tool-group">
-      <my-button
-        size="large"
-        @click="onBackIndexPage"
-      >
-        返回首页
-      </my-button>
-    </footer>
+      <footer class="tool-group">
+        <my-button
+          size="large"
+          @click="onBackIndexPage"
+        >
+          返回首页
+        </my-button>
+      </footer>
+    </div>
   </div>
 </template>
 
@@ -32,6 +32,13 @@ import { useRouter } from 'vue-router';
 
 import { CLEAR_QUESTION_DATA } from '@/store/question/types';
 import { CLEAR_ANSWER_DATA } from '@/store/answer/types';
+import { useBscroll } from '@/hooks';
+
+useBscroll({
+  // freeScroll: true,
+  // bounce: true,
+
+});
 
 const store = useStore();
 const router = useRouter();
@@ -71,18 +78,20 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .page-container {
+  height: 100vh;
 
-  .tool-group {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    background-color: #fff;
-    width: 100%;
-    text-align: center;
-    padding: .5rem 0;
-    box-sizing: border-box;
-    box-shadow: 0 -.05rem .2rem #ddd;
+  .scroll-content {
+    .tool-group {
+      // position: fixed;
+      // left: 0;
+      // bottom: 0;
+      background-color: #fff;
+      width: 100%;
+      text-align: center;
+      padding: .05rem 0;
+      box-sizing: border-box;
+      box-shadow: 0 -.05rem .05rem #ddd;
+    }
   }
 }
-
 </style>
