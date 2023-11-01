@@ -6,7 +6,7 @@ const APIS = {
 };
 
 const BASE_REQUEST_CONFIG = {
-  baseURL: 'http://localhost:5200',
+  baseURL: '/api',
   timeout: 5 * 1000,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
