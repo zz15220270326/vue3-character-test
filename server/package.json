@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/app.js"
+    "dev": "nodemon ./src/app.js",
+    "start": "pm2 ./src/app.js",
+    "stop": "pm2 stop ./src/app.js"
   },
   "keywords": [],
   "author": "",
