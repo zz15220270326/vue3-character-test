@@ -6,8 +6,8 @@ const { readFileSync, writeFileSync } = require('fs');
 const router = Router();
 const key = 'c6afa246be195680b76531737b0107e0';
 const apis = {
-  GET_QUESTIONS: 'http://apis.juhe.cn/fapig/character_test/questions',
-  GET_ANSWERS: 'http://apis.juhe.cn/fapig/character_test/analysis',
+  GET_QUESTIONS: '//apis.juhe.cn/fapig/character_test/questions',
+  GET_ANSWERS: '//apis.juhe.cn/fapig/character_test/analysis',
 };
 const http = new HTTP({});
 
