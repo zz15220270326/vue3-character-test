@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:5200';
+const BASE_URL = '/api';
 
 const APIS = {
   GET_Q_DATA: '/character-exam/start',
@@ -6,7 +6,7 @@ const APIS = {
 };
 
 const BASE_REQUEST_CONFIG = {
-  baseURL: '/api',
+  baseURL: BASE_URL,
   timeout: 5 * 1000,
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
